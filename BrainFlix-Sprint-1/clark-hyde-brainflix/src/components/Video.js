@@ -2,10 +2,12 @@ import '../styles/Video.scss';
 import VideoContent from './VideoContent';
 
 function Video({vids}) {
+
     return ( 
-        <ul>
-            {vids.map((vid)=>{
-                return(
+        
+        <div className="video-section">
+            {vids.map((vid) => {
+                return (
                     <VideoContent
                     key={vid.id}
                     id={vid.id}
@@ -17,11 +19,10 @@ function Video({vids}) {
                     likes={vid.likes}
                     duration={vid.duration}
                     timestamp={vid.timestamp}
-
-                />
+                    />
                 );
             })}
-        </ul>
+        </div>
         );
 }
 
