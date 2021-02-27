@@ -4,15 +4,17 @@ import '../styles/VideoContent.scss';
 
 
 function VideoContent({title, image, id, channel, description, views, likes, timestamp}){
+    let formattedTime= new Date(timestamp).toLocaleDateString("en-US");
+
 
     return(
-        <ul id={id}>
-            <li className="video-display__video"><video controls poster ={image}>Your browser does not support the video tag.</video></li> 
+        <ul className="video-display" id={id}>
+            <li className="video-display__video"><video className="video-display__vid" controls poster ={image}>Your browser does not support the video tag.</video></li> 
             <li className="video-display__title">{title}</li>
             <li className="video-display__channel">By {channel}</li>
-            <li className="video-display__timestamp">{timestamp}</li>
-            <li className="video-display__views"><img src={viewsIcon}/>{views}</li>
-            <li className="video-display__likes"><img src={likesIcon}/>{likes}</li>
+            <li className="video-display__timestamp">{formattedTime}</li>
+            <li className="video-display__views"><img className="video-display__icon" src={viewsIcon}/>{views}</li>
+            <li className="video-display__likes"><img className="video-display__icon" src={likesIcon}/>{likes}</li>
             <li className="video-display__description">{description}</li>
         </ul>
     ); 

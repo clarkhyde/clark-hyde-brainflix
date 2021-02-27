@@ -3,33 +3,76 @@
 @use 'mixins' as *;
 
 
-video{
-    width:20rem;
-    height:11.4375rem;
-    object-fit:cover;
+.video-display{
+    display:flex;
+    flex-wrap: wrap;
+
+
+    &__vid{
+        width:20rem;
+        height:11.4375rem;
+        object-fit:cover;
+    }
+
+    &__title{
+        @include h1-m{
+            padding: 2rem 1rem 1rem 1rem;
+            color: $black-color;
+            
+        }
+
+    }
+    
+    &__channel{
+        @include h2-m-bold{
+            padding: 0 .5rem 1rem 1rem;
+            color: $black-color;
+        }
+    
+    }
+    
+    &__timestamp{
+        @include h2-m{
+            color: $silver-color;
+            padding-right:2.5rem;
+        }
+    
+    }
+    
+    &__views{
+        @include h2-m{
+            color: $black-color;
+            padding: 0 1rem 1.5rem 1rem;
+            display:flex;
+            align-items:center;
+        }
+    
+    }
+    
+    &__likes{
+        @include h2-m{
+            color: $black-color;
+            display:flex;
+            align-items: center;
+            padding: 0 1.5rem 1.5rem .5rem;
+        }
+    }
+    
+    &__icon{
+        padding-right: .5rem;
+    }
+    
+    &__description{
+        @include h4-para-m{
+            padding: 1.5rem 0 2.5rem 0;
+            margin:0 1rem;
+            color:$black-color;
+            border-top: .125rem solid $mercury-color;
+        }
+    
+    }
+
 }
 
 
-.video-display__title{
 
-}
-
-.video-display__channel{
-
-}
-
-.video-display__timestamp{
-
-}
-
-.video-display__views{
-
-}
-
-.video-display__likes{
-
-}
-
-.video-display__description{
-
-}
