@@ -2,6 +2,13 @@
 @use 'typography' as *;
 @use 'mixins' as *;
 
+
+.mainbody{
+    @include desktop{
+        display:flex;
+    }
+}
+
 .thumbnails{
     padding: 2.5rem 1rem 0 1rem;
     min-width:100vw;
@@ -11,7 +18,8 @@
     }
 
     @include desktop{
-        display:inline-block;
+        width: 23rem;
+        border-left: .25rem solid $mercury-color;
     }
 
     &__header{

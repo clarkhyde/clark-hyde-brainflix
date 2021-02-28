@@ -33,6 +33,7 @@
     @include h4-para-m{}
 }
 
+//this is where things got a little
 
 .video-display{
     display:flex;
@@ -43,6 +44,9 @@
     @include tablet{
         justify-content:space-between;
         flex-wrap:nowrap;
+        margin: 0 1.5rem;
+    }
+    @include desktop{
         margin: 0;
     }
 
@@ -72,7 +76,7 @@
             color: $black-color;
 
             @include tablet{
-                padding: 0 .5rem 1.5rem 1.5rem;
+                padding: 0 .5rem 1.5rem 0;
             }
             @include desktop{
                 @include h3-subheader-dt{
@@ -129,7 +133,7 @@
         }
 
         @include tablet{
-            padding-right:1.5rem;
+            padding-right:0;
         }
 
                 @include desktop{
@@ -160,6 +164,7 @@
         @include desktop{
             width: 40vw;
             padding: 2.5rem 0 4rem 0;
+            margin-left: 0;
         }
     }
 }
