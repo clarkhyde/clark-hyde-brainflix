@@ -1,7 +1,6 @@
-import '../styles/Video.scss';
+import '../styles/VideoInfo.scss';
 import VideoContent from './VideoContent';
-
-function Video({vids}) {
+function VideoInfo({vids}) {
 
     return ( 
         
@@ -12,14 +11,15 @@ function Video({vids}) {
                     key={vid.id}
                     id={vid.id}
                     title={vid.title}
-                    channel={vid.channel}
                     image={vid.image}
+                    channel={vid.channel}
                     description={vid.description}
                     views={vid.views}
                     likes={vid.likes}
                     duration={vid.duration}
                     timestamp={vid.timestamp}
                     />
+
                 );
             })}
         </div>
@@ -27,4 +27,4 @@ function Video({vids}) {
 }
 
 
-export default Video;
+export default VideoInfo;

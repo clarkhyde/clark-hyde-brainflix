@@ -6,20 +6,14 @@
 .video-display{
     display:flex;
     flex-wrap: wrap;
+    border-bottom: .125rem solid $mercury-color;
+    margin: 0 1rem;
 
     @include tablet{
         justify-content:space-between;
         flex-wrap:nowrap;
+        margin: 0;
     }
-
-    &__video{
-        background-color: black;
-
-        @include tablet{
-            width:100%;
-        }
-    }
-
 
     &__vid{
         width:100vw;
@@ -28,8 +22,15 @@
 
         @include tablet{
             min-height:25rem;
-            width: 96.5vw;
-            padding-left:1.5rem;
+            width: 100vw;
+            background-color: black;
+            padding:0 1.75rem;
+        }
+
+        @include desktop{
+            min-height: 33.75rem;
+            padding: 0 10.5rem;
+
         }
     }
 
@@ -43,17 +44,27 @@
                     padding: 3rem 0 1.5rem 1.5rem;
                 }
             }
+
+            @include desktop{
+                padding: 3rem 0 1.5rem 0;
+            }
         }
 
     }
     
     &__channel{
         @include h2-m-bold{
-            padding: 0 .5rem 1rem 1rem;
+            padding: 0 .5rem 1rem 0;
             color: $black-color;
 
             @include tablet{
                 padding: 0 .5rem 1.5rem 1.5rem;
+            }
+            @include desktop{
+                @include h3-subheader-dt{
+                    padding-left: 0rem;
+
+                }
             }
         }
     
@@ -68,15 +79,29 @@
         @include tablet{
             padding-right:20rem;
         }
+
+        @include desktop{
+            @include h3-subheader-regular{
+                padding-right: 21.5625vw;
+            }
+        }
     
     }
     
     &__views{
         @include h2-m{
             color: $black-color;
-            padding: 0 1rem 1.5rem 1rem;
+            padding: 0 1rem 1.5rem 0;
             display:flex;
             align-items:center;
+        }
+
+        @include desktop{
+            @include desktop{
+                @include h3-subheader-regular{
+                    padding: 0 1rem 1.5rem 0;
+                }
+            }
         }
     
     }
@@ -92,6 +117,12 @@
         @include tablet{
             padding-right:1.5rem;
         }
+
+                @include desktop{
+            @include h3-subheader-regular{
+                padding-right: 2.5vw;
+            }
+        }
     }
     
     &__icon{
@@ -103,7 +134,7 @@
             padding: 1.5rem 0 2.5rem 0;
             margin:0 1rem;
             color:$black-color;
-            border-top: .125rem solid $mercury-color;
+         //   border-top: .125rem solid $mercury-color;
         }
 
         @include tablet{
@@ -112,10 +143,18 @@
 
             }
         }
-    
+        @include desktop{
+            width: 40vw;
+            padding: 2.5rem 0 4rem 0;
+        }
     }
-
 }
 
-
+.video-info{
+    @include desktop{
+        width: 63.4375vw;
+        padding-left:7.8125vw;
+        margin: 0;
+    }
+}
 
