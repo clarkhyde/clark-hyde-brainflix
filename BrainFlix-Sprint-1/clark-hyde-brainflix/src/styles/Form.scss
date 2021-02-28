@@ -1,0 +1,63 @@
+@use 'variables' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+
+
+
+
+.comment-form{
+    display: flex;
+    flex-direction: column;
+    //position: relative;
+    padding: 0 1rem;
+    align-items:flex-end;
+
+    &__counter{
+        @include h2-m-semibold{
+            padding-bottom: 2rem;
+            align-self:flex-start;
+        }
+    }
+
+    &__image{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        //  position: absolute;
+         //   right:15rem;
+          //  top: 1rem;
+          align-self:flex-start;
+
+    }
+
+    &__heading{
+        @include h5-labels{
+            font-weight:700;
+            color: #AFAFAF;
+            margin-right:4rem;
+        }
+
+    }
+
+    &__text-input{
+        border: .125rem solid $blue-color;
+        width: 14rem;
+        height: 6rem;
+        padding: 1rem;
+        border-radius: .5rem;
+        margin-bottom: 1rem;
+
+
+    }
+
+    &__button{
+        @include h4-para-m-semibold{
+            color:white;
+        background-color: $blue-color;
+        width: 14rem;
+        padding: .815rem 0;
+        border-radius: .5rem;
+        }
+    }
+}

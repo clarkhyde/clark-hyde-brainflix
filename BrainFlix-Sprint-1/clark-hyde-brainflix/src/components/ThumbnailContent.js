@@ -2,7 +2,7 @@ import '../styles/ThumbnailContent.scss';
 
 function ThumbnailContent({id, title, channel, image}) {
     return(
-
+        
         <div className="thumbnails__card" id={id}>
             <img className="thumbnails__image" src={image}></img>
             <ul className="thumbnails__list">
