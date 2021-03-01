@@ -5,6 +5,9 @@
 
 .thumbnails__card{
     display:flex;
+    @include desktop{
+        width: 21.5rem;
+    }
 }
 
 .thumbnails__image{
@@ -152,7 +155,6 @@
             padding: 1.5rem 0 2.5rem 0;
             margin:0 1rem;
             color:$black-color;
-         //   border-top: .125rem solid $mercury-color;
         }
 
         @include tablet{
