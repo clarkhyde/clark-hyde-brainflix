@@ -3,43 +3,43 @@ import './styles/App.scss';
 import Nav from './components/Nav';
 import ThumbnailDetails from './Assets/Data/video-details.json';
 import React, { Component } from 'react';
-import MainBody from './components/MainBody';
+import Thumbnails from './components/Thumbnails';
 import Video from './components/Video';
+import SubVideo from './components/SubVideo';
+import Form from './components/Form';
+import Comment from './components/Comment';
 
 class App extends Component {
 
   state = {
-  thumbs: ThumbnailDetails
+  thumbs: ThumbnailDetails,
+  MainVideo: null
  };
 
- /*
- switchMainImage = (e,id) =>{
-   e.preventDefault();
-  const vidId = e.target.id.value;
-  console.log(vidId);
-
-  const newStateArray = this.state.thumbs.map((thumb)=>{
-    if (thumb.id ===id) {
-  //    thumb.image = image;
-      return thumb;
-    } 
-  });
-
-  this.setState({
-    thumbs:newStateArray
-  }); 
-
-
- } */
 
   render() {
     return (
       <body>
 
           <Nav/>
-          <MainBody
-          thumbs={this.state.thumbs}
-          handleClick={this.switchMainImage}/> 
+          <Video 
+          thumbs={this.state.thumbs}/>
+          <main className="mainbody">
+            <div>
+          <SubVideo />
+          <Form/>
+          <Comment/>
+
+          </div>
+            <Thumbnails 
+            thumbs={this.state.thumbs}
+            />
+          </main>
+
+
+         {/* <MainBody
+          thumbs={this.state.thumbs}/> */}
+          
 
 
 
