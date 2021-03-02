@@ -22,26 +22,24 @@ class App extends Component {
   render() {
     return (
       <body>
-        <CommentList
-        displayedComments={this.state.displayedComments}/>
-{/*
+
           <Nav/>
           <Video 
           mainVideo={this.state.mainVideo}/>
 
           <main className="mainbody">
-            <div>
+            
+            <div className="body-left">
           <SubVideo />
           <Form/>
-          <Comment
-          displayedComments={this.state.displayedComments}/>
-
+          <CommentList
+        displayedComments={this.state.displayedComments}/>
           </div>
             <Thumbnails 
             thumbs={this.state.thumbs}
             />
           </main>
-         */}
+         
 
       </body>
     );

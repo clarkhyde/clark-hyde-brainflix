@@ -28,3 +28,9 @@ a{
         display:flex;
     }
 }
+
+.body-left{
+    @include desktop{
+        margin-left:6.25rem;
+    }
+}
