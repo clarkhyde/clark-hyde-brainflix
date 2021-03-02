@@ -8,40 +8,40 @@ import Video from './components/Video';
 import SubVideo from './components/SubVideo';
 import Form from './components/Form';
 import Comment from './components/Comment';
+import CommentList from './components/CommentList';
 
 class App extends Component {
 
   state = {
   thumbs: ThumbnailDetails,
-  MainVideo: null
+  mainVideo: ThumbnailDetails[0],
+  displayedComments: ThumbnailDetails[0].comments
  };
 
 
   render() {
     return (
       <body>
-
+        <CommentList
+        displayedComments={this.state.displayedComments}/>
+{/*
           <Nav/>
           <Video 
-          thumbs={this.state.thumbs}/>
+          mainVideo={this.state.mainVideo}/>
+
           <main className="mainbody">
             <div>
           <SubVideo />
           <Form/>
-          <Comment/>
+          <Comment
+          displayedComments={this.state.displayedComments}/>
 
           </div>
             <Thumbnails 
             thumbs={this.state.thumbs}
             />
           </main>
-
-
-         {/* <MainBody
-          thumbs={this.state.thumbs}/> */}
-          
-
-
+         */}
 
       </body>
     );

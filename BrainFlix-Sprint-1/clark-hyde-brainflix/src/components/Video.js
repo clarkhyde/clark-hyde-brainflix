@@ -1,9 +1,10 @@
 import '../styles/Video.scss'
 
-function Video({thumbs}) {
-    let image = thumbs[0].image;
+function Video({mainVideo}) {
+    console.log(mainVideo.image);
+    let displayedVideo = mainVideo.image;
     return(
-        <video className="video-display__vid" controls poster ={image}>Your browser does not support the video tag.</video>
+        <video className="video-display__vid" controls poster={displayedVideo}>Your browser does not support the video tag.</video>
     );
 }
 

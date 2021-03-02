@@ -1,19 +1,21 @@
-import React, { Component } from 'react';
-import videoInfo from '../Assets/Data/video-details.json';
+import Comment from './Comment';
 
-class CommentList extends Component {
-
-    state={
-        details: videoInfo
-    }
-    render() {
-        return (
-            <div>
-                <Commments 
-                details={this.state.videoInfo}/>
-            </div>
-        );
-    }
-}
+function CommentList({displayedComments}) {
+    console.log(displayedComments);
+    return (
+        <div>
+            {displayedComments.map((displayedComment)=>{
+                return(
+                    <Comment
+                    key={displayedComment.id}
+                    name={displayedComment.name}
+                    comment={displayedComment.comment}
+                    timestamp={displayedComment.timestamp}
+                    />
+                );
+            })}
+        </div>
+    );
+};
 
 export default CommentList;

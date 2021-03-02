@@ -1,10 +1,7 @@
 import '../styles/Thumbnails.scss';
 import ThumbnailContent from './ThumbnailContent';
-import viewsIcon from '../Assets/Icons/Icon-views.svg';
-import likesIcon from '../Assets/Icons/Icon-likes.svg';
-import Form from './Form';
-import Comment from './Comment';
-import SubVideo from './SubVideo';
+
+
 
 function Thumbnails({thumbs}){
     
