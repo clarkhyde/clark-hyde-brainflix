@@ -15,7 +15,8 @@ class App extends Component {
   state = {
   thumbs: ThumbnailDetails,
   mainVideo: ThumbnailDetails[0],
-  displayedComments: ThumbnailDetails[0].comments
+  displayedComments: ThumbnailDetails[0].comments,
+  subVideoInfo: ThumbnailDetails[0]
  };
 
 
@@ -30,10 +31,11 @@ class App extends Component {
           <main className="mainbody">
             
             <div className="body-left">
-          <SubVideo />
+          <SubVideo
+          subVideoInfo={this.state.subVideoInfo} />
           <Form/>
           <CommentList
-        displayedComments={this.state.displayedComments}/>
+          displayedComments={this.state.displayedComments}/>
           </div>
             <Thumbnails 
             thumbs={this.state.thumbs}
