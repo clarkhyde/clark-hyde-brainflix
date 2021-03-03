@@ -1,0 +1,22 @@
+@use 'variables' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+    .video-display__vid{
+        width:100vw;
+        object-fit:cover;
+        height: 11.4375rem;
+
+        @include tablet{
+            min-height:25rem;
+            width: 100vw;
+            background-color: black;
+            padding:0 1.75rem;
+        }
+
+        @include desktop{
+            min-height: 33.75rem;
+            padding: 0 10.5rem;
+
+        }
+    }

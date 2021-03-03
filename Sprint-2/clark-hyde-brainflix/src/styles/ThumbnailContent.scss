@@ -1,0 +1,44 @@
+@use 'variables' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+
+.thumbnails__card{
+    display:flex;
+    @include desktop{
+        width: 21.5rem;
+    }
+}
+
+.thumbnails__image{
+    min-width: 7.5rem;
+    width: 7.5rem;
+    height: 4.375rem;
+    margin-bottom:1.5rem;
+}
+
+.thumbnails__list{
+    padding-left:1rem;
+
+    @include tablet{
+        width: 14rem;
+    }
+
+    @include desktop{
+        width:13rem;
+    }
+}
+
+.thumbnails__title{
+    @include h4-para-m-semibold{
+        padding-bottom:1rem;
+    }
+
+}
+
+.thumbnails__channel{
+    @include h4-para-m{}
+}
+
+//this is where things got a little
+
