@@ -2,11 +2,11 @@ import Comment from './Comment';
 
 
 function CommentList({displayedComments}) {
-    console.log(displayedComments);
+ //   console.log(displayedComments);
 
     return (
         <div>
-               {/* {displayedComments.map((displayedComment)=>{
+                {displayedComments.map((displayedComment)=>{
                 return(
                     <Comment
                     name={displayedComment.name}
@@ -14,7 +14,7 @@ function CommentList({displayedComments}) {
                     timestamp={displayedComment.timestamp}
                     />
                 );
-            })}    */}
+            })}    
         </div>
     );
 };

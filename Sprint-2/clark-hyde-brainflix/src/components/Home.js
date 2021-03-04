@@ -30,21 +30,18 @@ componentDidMount(){
     
     axios.get(`${APIUrl}videos/${mainVideoId}/${APIKey}`)
     .then((response)=>{
-      
-  //    console.log(response.data.comments);
 
        this.setState({
          mainVideo: response.data,
        })
-
-      //  this.setState({
-      //    displayedComments: response.data.comments
-      //  })
     })
 
-    axios.get(`${APIUrl}videos/${mainVideoId}/comments/${APIKey}`)
+    axios.get(`${APIUrl}videos/${mainVideoId}/${APIKey}`)
     .then((response)=>{
-      console.log(response);
+   //   console.log(response);
+      this.setState({
+        displayedComments: response.data.comments
+      })
     })
 
   })
