@@ -61,6 +61,14 @@ if(prevProps.match.params.videoId !== videoId){
      })
   })
 
+  axios.get(`${APIUrl}videos/${videoId}/${APIKey}`)     // added this during the pod review. Double chickity check it out!
+  .then((response)=>{
+    console.log(response.data.comments);
+     this.setState({
+       displayedComments: response.data.comments,
+     })
+  })
+
 }
 
 
