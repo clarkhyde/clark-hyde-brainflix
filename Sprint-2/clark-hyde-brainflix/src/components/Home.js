@@ -1,5 +1,4 @@
 import '../styles/Home.scss';
-//import ThumbnailDetails from '../Assets/Data/video-details.json';
 import React, { Component } from 'react';
 import Thumbnails from './Thumbnails';
 import Video from './Video';
@@ -50,13 +49,13 @@ componentDidMount(){
 componentDidUpdate(prevProps){
   const { videoId } = this.props.match.params;
 
-  console.log(this.props.match.params);
+ // console.log(this.props.match.params);
  
 if(prevProps.match.params.videoId !== videoId){
   
   axios.get(`${APIUrl}videos/${videoId}/${APIKey}`)
   .then((response)=>{
-    console.log(response.data);
+  //  console.log(response.data);
      this.setState({
        mainVideo: response.data,
      })
@@ -64,8 +63,6 @@ if(prevProps.match.params.videoId !== videoId){
 
 }
 
-
-  
 
 }
 
@@ -102,7 +99,6 @@ if(prevProps.match.params.videoId !== videoId){
             </div>
             <Thumbnails
               thumbs={remainingThumbnails}
-              handleClick={this.updateThumbnails}
               />
         </main>
       </>

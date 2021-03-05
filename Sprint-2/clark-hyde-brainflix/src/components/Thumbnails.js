@@ -3,7 +3,7 @@ import ThumbnailContent from './ThumbnailContent';
 
 
 
-function Thumbnails({thumbs, handleClick}){
+function Thumbnails({thumbs}){
    // console.log("check it out yo", thumbs);
     return(
         <div className="thumbnails">
@@ -15,7 +15,6 @@ function Thumbnails({thumbs, handleClick}){
                         title={thumb.title}
                         channel={thumb.channel}
                         image={thumb.image}
-                        handleClick={handleClick}
                     />
                 )
             })}

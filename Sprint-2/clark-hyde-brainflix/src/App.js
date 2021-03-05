@@ -9,12 +9,13 @@ import React, { Component } from 'react';
 class App extends Component {
     render() {
         return (
+
             <BrowserRouter>
                 <Nav/>
                 <Switch>
-                <Route path="/" exact component={Home} /> 
-                <Route path="/video-details/:videoId" component={Home}/>
-                <Route path="/upload" component={UploadPage} /> 
+                    <Route path="/" exact component={Home} /> 
+                    <Route path="/video-details/:videoId" component={Home}/>
+                    <Route path="/upload" component={UploadPage} /> 
                 </Switch>
             </BrowserRouter>
             
