@@ -43,29 +43,47 @@ componentDidMount(){
         displayedComments: response.data.comments
       })
     })
-
   })
+}
+
+
+componentDidUpdate(prevProps){
+  const { videoId } = this.props.match.params;
+
+  console.log(this.props.match.params);
  
-
-
+if(prevProps.match.params.videoId !== videoId){
+  
+  axios.get(`${APIUrl}videos/${videoId}/${APIKey}`)
+  .then((response)=>{
+    console.log(response.data);
+     this.setState({
+       mainVideo: response.data,
+     })
+  })
 
 }
 
-  updateThumbnails = (id) => {
-  //  console.log("check it out", id);
 
-    this.setState({
-    //  mainVideo: ThumbnailDetails.find((vid) => vid.id === id)
-    })
+  
 
-  }
+}
+
+// updateThumbnails = (id) => {
+//   console.log("check it out", id);
+
+//   this.setState({
+//     mainVideo: this.state.thumbs.find((vid) => vid.id === id)
+//   })
+
+// }
 
   render() {
     let remainingThumbnails = this.state.thumbs.filter((thumb) => {
       return thumb.id !== this.state.mainVideo.id;
 
     })
-console.log(this.state.displayedComments);
+//console.log(this.state.mainVideo);
 
     return (
       <>

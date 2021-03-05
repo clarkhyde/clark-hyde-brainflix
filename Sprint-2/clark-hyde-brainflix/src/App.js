@@ -13,6 +13,7 @@ class App extends Component {
                 <Nav/>
                 <Switch>
                 <Route path="/" exact component={Home} /> 
+                <Route path="/video-details/:videoId" component={Home}/>
                 <Route path="/upload" component={UploadPage} /> 
                 </Switch>
             </BrowserRouter>
