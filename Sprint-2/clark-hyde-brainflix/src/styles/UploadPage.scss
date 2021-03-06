@@ -1,0 +1,14 @@
+@use 'variables' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+.upload-page{
+    background-color: $alabaster-color;
+
+    &__heading{
+        @include h1-m{
+            padding: 2rem 0 0 1rem;
+            border-top: .0625rem solid $mercury-color;
+        }
+    }
+}

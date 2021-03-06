@@ -1,0 +1,34 @@
+@use 'variables' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+
+
+.upload-form__publish{
+
+    @include h2-m-semibold{
+        background-color: $blue-color;
+        padding: 1rem 0;
+        border-radius:.5rem;
+        width: 18rem;
+        display:flex;
+        justify-content: center;
+        margin: 2rem 1rem .5rem 1rem;
+        color: white;
+    }
+}
+
+.upload-form__cancel{
+    
+    @include h2-m-semibold{
+        color: $blue-color;
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-radius:.5rem;
+        width: 100%;
+        display:flex;
+        justify-content: center;
+        margin: .5rem 0;
+    }
+}
+

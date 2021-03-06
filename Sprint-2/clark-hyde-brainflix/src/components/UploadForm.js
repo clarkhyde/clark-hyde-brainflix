@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import {Link, withRouter} from 'react-router-dom';
+
 import Modal from './Modal';
 import uploadImage from '../Assets/Images/Upload-video-preview.jpg';
+import '../styles/UploadForm.scss';
+import UploadPageButtons from './UploadPageButtons';
+
 
 class UploadForm extends Component {
 
@@ -52,8 +55,8 @@ class UploadForm extends Component {
                 className="upload-form"
                 id="form-upload"
             >
-                <h3 className="">VIDEO THUMBNAIL</h3>
-                <img className="" src={uploadImage} alt="upload image"/>
+                <h3 className="upload-form__thumb-title">VIDEO THUMBNAIL</h3>
+                <img className="upload-form__thumb-image" src={uploadImage} alt="upload image"/>
                 <label 
                     className="upload-form__title-label" 
                     for="inputTitle"
@@ -64,6 +67,7 @@ class UploadForm extends Component {
                     className="upload-form__title-input" 
                     type="text" 
                     name="inputTitle"
+                    placeholder="Add a title to your video"
                     onChange={this.updateTitle}
                     value={this.state.title}
                 />
@@ -73,10 +77,11 @@ class UploadForm extends Component {
                     >
                     ADD A VIDEO DESCRIPTION
                 </label>
-                <input 
+                <textarea 
                     className="upload-form__description-input" 
                     type="text" 
                     name="inputDescription"
+                    placeholder="Add a description of your video"
                     onChange={this.updateDescription}
                     value={this.state.description}
                 />
@@ -84,19 +89,8 @@ class UploadForm extends Component {
                     show={this.state.show} 
                 />
             </form>
-            <button 
-                className="upload-form__publish"
-                onClick={this.handleClick}
-                form="form-upload"
-                >
-                PUBLISH
-            </button>
-            <Link 
-                className="upload-form__cancel" 
-                to ="/"
-                >
-                CANCEL
-            </Link>
+            <UploadPageButtons 
+            handleClick={this.handleClick}/>
             </>
         );
     }
