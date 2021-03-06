@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import Modal from './Modal';
-
+import uploadImage from '../Assets/Images/Upload-video-preview.jpg';
 
 class UploadForm extends Component {
 
@@ -47,27 +47,57 @@ class UploadForm extends Component {
     }
     render() {
         return (
-            <form>
-                <label className="" for="inputTitle"> TITLE YOUR VIDEO</label>
+            <>
+            <form 
+                className="upload-form"
+                id="form-upload"
+            >
+                <h3 className="">VIDEO THUMBNAIL</h3>
+                <img className="" src={uploadImage} alt="upload image"/>
+                <label 
+                    className="upload-form__title-label" 
+                    for="inputTitle"
+                    > 
+                    TITLE YOUR VIDEO
+                </label>
                 <input 
-                className="" 
-                type="text" 
-                name="inputTitle"
-                onChange={this.updateTitle}
-                value={this.state.title}
+                    className="upload-form__title-input" 
+                    type="text" 
+                    name="inputTitle"
+                    onChange={this.updateTitle}
+                    value={this.state.title}
                 />
-                <label className="" for="inputDescription">ADD A VIDEO DESCRIPTION</label>
+                <label 
+                    className="upload-form__description-label" 
+                    for="inputDescription"
+                    >
+                    ADD A VIDEO DESCRIPTION
+                </label>
                 <input 
-                className="" 
-                type="text" 
-                name="inputDescription"
-                onChange={this.updateDescription}
-                value={this.state.description}
+                    className="upload-form__description-input" 
+                    type="text" 
+                    name="inputDescription"
+                    onChange={this.updateDescription}
+                    value={this.state.description}
                 />
-                <Modal show={this.state.show} />
-                <button className=""onClick={this.handleClick}>PUBLISH</button>
-                <Link to ="/">CANCEL</Link>
+                <Modal 
+                    show={this.state.show} 
+                />
             </form>
+            <button 
+                className="upload-form__publish"
+                onClick={this.handleClick}
+                form="form-upload"
+                >
+                PUBLISH
+            </button>
+            <Link 
+                className="upload-form__cancel" 
+                to ="/"
+                >
+                CANCEL
+            </Link>
+            </>
         );
     }
 }

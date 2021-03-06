@@ -57,21 +57,31 @@
     border: .125rem solid $mercury-color;
     background-color: $alabaster-color;
     border-radius: .5rem;
+
+    @include tablet{
+        width: 15.25rem;
+    }
     }
 
     &__upload{
+
+        @include tablet{
+            margin: 0 0 0 1.5rem;
+        }
+    }
+
+    &__button{
         background-color: $blue-color;
         padding: 1rem 0;
         border-radius:.5rem;
         width: 13.625rem;
         display:flex;
         justify-content: center;
-        margin-top:.5rem;
+        margin: .5rem 0;
 
         @include tablet{
-            margin: 0 0 0 1.5rem;
+            width: 6.5rem;
         }
-
     }
 
     &__image{

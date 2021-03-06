@@ -14,7 +14,7 @@ function Nav()  {
                         <input type="text" className ="nav-right__input" placeholder= "           Search"></input>
                     </li>
                     <li className = "nav-right__upload">
-                        <NavLink to="/upload"><a href = "#"><img src={plus}></img>   UPLOAD</a></NavLink>
+                        <NavLink to="/upload" className="nav-right__button"><img src={plus}></img>   UPLOAD</NavLink>
                     </li>
                     <li className = "nav-right__profile">
                         <img src={profileImage} className = "nav-right__image"></img>

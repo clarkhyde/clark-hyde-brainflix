@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import uploadImage from '../Assets/Images/Upload-video-preview.jpg';
 import {Link} from 'react-router-dom';
 import UploadForm from './UploadForm';
 
@@ -42,18 +41,8 @@ class UploadPage extends Component {
         return (
             <div>   
                 <h1 className="">Upload Video</h1>
-                <h3 className="">VIDEO THUMBNAIL</h3>
-                <img className="" src={uploadImage} alt="upload image"/>
-                <UploadForm />
-                {/* <form>
-                    <label className="" for="inputTitle"> TITLE YOUR VIDEO</label>
-                    <input className="" type="text" name="inputTitle"></input>
-                    <label className="" for="inputDescription">ADD A VIDEO DESCRIPTION</label>
-                    <input className="" type="text" name="inputDescription"></input>
-                    <button className=""onClick={this.handleClick} >PUBLISH</button>
-                    <Link to ="/">CANCEL</Link>
-                </form> */}
-                
+
+                <UploadForm />      
             </div>
         );
     }
