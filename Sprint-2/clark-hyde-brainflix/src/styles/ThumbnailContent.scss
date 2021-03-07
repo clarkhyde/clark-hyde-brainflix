@@ -32,12 +32,15 @@
 .thumbnails__title{
     @include h4-para-m-semibold{
         padding-bottom:1rem;
+        color: $black-color;
     }
 
 }
 
 .thumbnails__channel{
-    @include h4-para-m{}
+    @include h4-para-m{
+        color: $black-color;
+    }
 }
 
 //this is where things got a little

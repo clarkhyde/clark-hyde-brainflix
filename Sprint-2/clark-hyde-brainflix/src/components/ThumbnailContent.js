@@ -5,17 +5,15 @@ import { Link } from "react-router-dom";
 function ThumbnailContent({id, title, channel, image}) {
 
     return(
-
-        <div className="thumbnails__card" id={id}>
-        <Link to={"/video-details/"+ id} id={id}>   
-            <img className="thumbnails__image" src={image} id={id}></img>
-        </Link>
+        <Link to={"/video-details/"+ id} id={id}>
+            <div className="thumbnails__card" id={id}>
+            <img className="thumbnails__image" src={image} id={id} alt="thumbnail image"/>
             <ul className="thumbnails__list">
                 <li className="thumbnails__title">{title}</li>
                 <li className="thumbnails__channel" >{channel}</li>
             </ul>
-            
         </div> 
+        </Link>
     );
 }
 

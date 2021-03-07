@@ -37,40 +37,32 @@ componentDidMount(){
 
     axios.get(`${APIUrl}videos/${mainVideoId}/${APIKey}`)
     .then((response)=>{
-   //   console.log(response);
       this.setState({
-        displayedComments: response.data.comments
+        displayedComments: response.data.comments.sort((a,b)=>b.timestamp-a.timestamp)
       })
     })
   })
 }
 
-
 componentDidUpdate(prevProps){
   const { videoId } = this.props.match.params;
-
- // console.log(this.props.match.params);
  
-if(prevProps.match.params.videoId !== videoId){
-  
-  axios.get(`${APIUrl}videos/${videoId}/${APIKey}`)
-  .then((response)=>{
-  //  console.log(response.data);
-     this.setState({
-       mainVideo: response.data,
-     })
-  })
+  if(prevProps.match.params.videoId !== videoId){
+    axios.get(`${APIUrl}videos/${videoId}/${APIKey}`)
+    .then((response)=>{
+    console.log(response.data);
+      this.setState({
+        mainVideo: response.data,
+      })
+    })
 
-  axios.get(`${APIUrl}videos/${videoId}/${APIKey}`)     // added this during the pod review. Double chickity check it out!
-  .then((response)=>{
-    console.log(response.data.comments);
-     this.setState({
-       displayedComments: response.data.comments,
-     })
-  })
-
-}
-
+      axios.get(`${APIUrl}videos/${videoId}/${APIKey}`)     // added this during the pod review. Double checkity check it out!
+      .then((response)=>{
+        this.setState({
+          displayedComments: response.data.comments,
+        })
+      })
+    }
 
 }
 
@@ -82,6 +74,9 @@ if(prevProps.match.params.videoId !== videoId){
 //   })
 
 // }
+
+
+
 
   render() {
     let remainingThumbnails = this.state.thumbs.filter((thumb) => {
@@ -100,7 +95,9 @@ if(prevProps.match.params.videoId !== videoId){
             <SubVideo
                 mainVideo={this.state.mainVideo} 
                 />
-            <Form />
+            <Form
+            mainVideo={this.state.mainVideo}
+            />
              <CommentList
                 displayedComments={this.state.displayedComments} 
                 /> 
