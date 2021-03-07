@@ -4,21 +4,21 @@ import '../styles/UploadPageButtons.scss';
 function UploadPageButtons(props){
 
     return(
-        <>
-        <button 
-        className="upload-form__publish"
-        onClick={props.handleClick}
-        form="form-upload"
-        >
-        PUBLISH
-    </button>
-    <Link 
-        className="upload-form__cancel" 
-        to ="/"
-        >
-        CANCEL
-    </Link>
-    </>
+        <div className="upload-form__buttons">
+            <button 
+            className="upload-form__publish"
+            onClick={props.handleClick}
+            form="form-upload"
+            >
+            PUBLISH
+        </button>
+        <Link 
+            className="upload-form__cancel" 
+            to ="/"
+            >
+            CANCEL
+        </Link>
+    </div>
     );
 }
 

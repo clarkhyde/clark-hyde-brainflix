@@ -10,5 +10,9 @@
             padding: 2rem 0 0 1rem;
             border-top: .0625rem solid $mercury-color;
         }
+
+        @include tablet{
+            padding:3rem 1.5rem 2.5rem 1.5rem;
+        }
     }
 }

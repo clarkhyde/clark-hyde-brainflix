@@ -2,7 +2,18 @@
 @use 'typography' as *;
 @use 'mixins' as *;
 
+.upload-form__buttons{
 
+    @include tablet{
+        padding: 2.5rem 1.5rem 0 0;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    @include desktop{
+        padding-right: 6.25rem;
+    }
+}
 
 .upload-form__publish{
 
@@ -15,6 +26,11 @@
         justify-content: center;
         margin: 2rem 1rem .5rem 1rem;
         color: white;
+
+        @include tablet{
+            margin: 0;
+            width: 10rem;
+        }
     }
 }
 
@@ -29,6 +45,11 @@
         display:flex;
         justify-content: center;
         margin: .5rem 0;
+
+        @include tablet{
+            margin: 0;
+            width: 10rem;
+        }
     }
 }
 
