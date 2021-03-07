@@ -40,11 +40,14 @@ class UploadPage extends Component {
 
     render() {
         return (
-            <div className="upload-page">   
+            <>
+            <div className="upload-page"> 
                 <h1 className="upload-page__heading">Upload Video</h1>
 
                 <UploadForm />      
             </div>
+
+            </>
         );
     }
 }

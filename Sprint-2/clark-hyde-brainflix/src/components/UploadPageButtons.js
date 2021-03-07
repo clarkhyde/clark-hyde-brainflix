@@ -4,7 +4,7 @@ import '../styles/UploadPageButtons.scss';
 function UploadPageButtons(props){
 
     return(
-        <div className="upload-form__buttons">
+        <div className="upload-form__buttons" id="upload-page__buttons">
             <button 
             className="upload-form__publish"
             onClick={props.handleClick}
@@ -15,9 +15,9 @@ function UploadPageButtons(props){
         <Link 
             className="upload-form__cancel" 
             to ="/"
-            >
-            CANCEL
-        </Link>
+        >
+        CANCEL
+    </Link>
     </div>
     );
 }

@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-
-import Modal from './Modal';
 import uploadImage from '../Assets/Images/Upload-video-preview.jpg';
 import '../styles/UploadForm.scss';
 import UploadPageButtons from './UploadPageButtons';
-
+import Modal from './Modal';
 
 class UploadForm extends Component {
 
@@ -33,24 +31,16 @@ class UploadForm extends Component {
         this.setState({
             show: true,
         });
-        // need two if not this.states for if the fields are not filled out, then else do something!
-        // if(this.state.title){
-        //     alert("Upload requires title. Please enter title and try again.");
-        //     return;
-        // }
-
-        // if(this.state.description){
-        //     alert("Upload requires description. Please enter description and try again.")
-        //     return;
-        // }
-        // else{
+        document.getElementById("form-upload").style.display="none";
+        document.getElementById("upload-page__buttons").style.display="none";
         console.log("You have been console logged because the button worked!");
-        // }
+
 
     }
     render() {
         return (
             <>
+            <Modal show={this.state.show}/>
                 <form
                     className="upload-form"
                     id="form-upload"
@@ -90,10 +80,6 @@ class UploadForm extends Component {
                         />
 
                     </div>
-
-                    <Modal
-                        show={this.state.show}
-                    />
                 </form>
                 <UploadPageButtons
                     handleClick={this.handleClick} />

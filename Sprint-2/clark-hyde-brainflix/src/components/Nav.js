@@ -11,7 +11,7 @@ function Nav()  {
                 <NavLink exact to="/"><img src={logo} className = "nav__image" alt="Brainflix"/></ NavLink>
                 <ul className = "nav-right">
                     <li className = "nav-right__search">
-                        <input type="text" className ="nav-right__input" placeholder= "           Search"></input>
+                        <input type="text" className ="nav-right__input" placeholder= "Search"></input>
                     </li>
                     <li className = "nav-right__upload">
                         <NavLink to="/upload" className="nav-right__button"><img src={plus}></img>   UPLOAD</NavLink>
