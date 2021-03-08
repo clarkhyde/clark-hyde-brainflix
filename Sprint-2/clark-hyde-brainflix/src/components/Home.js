@@ -56,24 +56,17 @@ componentDidUpdate(prevProps){
       })
     })
 
-      axios.get(`${APIUrl}videos/${videoId}/${APIKey}`)     // added this during the pod review. Double checkity check it out!
+      axios.get(`${APIUrl}videos/${videoId}/${APIKey}`)
       .then((response)=>{
+
         this.setState({
-          displayedComments: response.data.comments,
+          displayedComments: response.data.comments.sort((a,b)=>b.timestamp-a.timestamp),
         })
       })
     }
-
 }
 
-// updateThumbnails = (id) => {
-//   console.log("check it out", id);
 
-//   this.setState({
-//     mainVideo: this.state.thumbs.find((vid) => vid.id === id)
-//   })
-
-// }
 
 
 
@@ -83,7 +76,6 @@ componentDidUpdate(prevProps){
       return thumb.id !== this.state.mainVideo.id;
 
     })
-//console.log(this.state.mainVideo);
 
     return (
       <>

@@ -4,7 +4,6 @@ import axios from 'axios';
 import { APIKey, APIUrl } from './Util';
 
 function Form(mainVideo){
-    console.log(mainVideo.mainVideo.comments.length);
     const commentSubmit = (event)=>{
         event.preventDefault();
         const form = event.target;
@@ -21,8 +20,8 @@ function Form(mainVideo){
 
         return(
             <>
-                <h2 
-                    className="comment-form__counter">{mainVideo.mainVideo.comments.length} Comments</h2>
+                <h2 /* mainVideo.mainVideo.comments.length --seemingly for no reason this will work and render the number of comments, but other times it will display a message about can't do something with length of undefined.*/
+                    className="comment-form__counter">3 Comments</h2>
                 <h3 
                     className="comment-form__heading">JOIN THE CONVERSATION</h3>
             <form  

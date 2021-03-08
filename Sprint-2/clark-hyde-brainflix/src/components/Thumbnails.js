@@ -4,7 +4,6 @@ import ThumbnailContent from './ThumbnailContent';
 
 
 function Thumbnails({thumbs}){
-   // console.log("check it out yo", thumbs);
     return(
         <div className="thumbnails">
             <h2 className="thumbnails__header">NEXT VIDEO</h2>
