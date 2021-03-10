@@ -1,0 +1,98 @@
+@use 'variables' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+
+
+
+
+.comment-form{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0 1rem;
+    padding-bottom: 1.5rem;
+    align-items:flex-end;
+    border-bottom: .125rem solid $mercury-color;
+
+    @include tablet{
+        margin: 0 1.5rem;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    @include desktop{
+        margin: 0;
+    }
+
+
+    &__counter{
+        @include h2-m-semibold{
+            padding: 0 0 2rem 1rem;
+        }
+
+        @include tablet{
+            padding-left:1.5rem;
+        }
+
+        @include desktop{
+            padding-left: 0;
+        }
+    }
+
+    &__image{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        position: absolute;
+        align-self: flex-start;
+    }
+
+    &__heading{
+        @include h5-labels{
+            font-weight:700;
+            color: #AFAFAF;
+            padding-left: 4.5rem;
+        }
+
+        @include tablet{
+            padding-left: 5rem;
+        }
+
+        @include desktop{
+            padding-left:3.5rem;
+        }
+
+    }
+
+    &__text-input{
+        border: .125rem solid $blue-color;
+        width: 14.75rem;
+        height: 6rem;
+        padding: 1rem 0 4rem 1rem;
+        border-radius: .5rem;
+        margin-bottom: 1rem;
+
+        @include tablet{
+            width: 27.5rem;
+            height:3rem;
+            margin-right: 1rem;
+            margin-left: 3.5rem
+        }
+
+    }
+
+    &__button{
+        @include h4-para-m-semibold{
+        color:white;
+        background-color: $blue-color;
+        width: 14.75rem;
+        padding: 1rem 0;
+        border-radius: .5rem;
+        }
+        
+        @include tablet{
+            width: 10rem;
+        }
+    }
+}

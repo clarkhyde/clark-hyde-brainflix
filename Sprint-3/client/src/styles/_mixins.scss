@@ -1,0 +1,131 @@
+@use 'variables' as *; 
+@use 'typography' as *;
+
+@mixin tablet {
+    @media (min-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $breakpoint-desktop) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media(max-width:$breakpoint-mobile){
+        @content;
+    }
+}
+
+@mixin h1-hero-header-dt{
+    @media(min-width:$breakpoint-tablet){
+    @content;
+    font-size:3.75rem;
+    font-weight: $bold-font-weight;
+    line-height:4.25rem;
+    color:white;
+    }
+}
+
+@mixin h1-header-dt{
+    @content;
+    font-size:2.25rem;
+    font-weight:$bold-font-weight;
+    line-height:2.75rem;
+}
+
+@mixin h2-header-dt{
+    @content;
+    font-size:1.5rem;
+    font-weight:$bold-font-weight;
+    line-height:2rem;
+}
+
+@mixin h3-subheader-regular{
+    @content;
+    font-size:1rem;
+    line-height:1.5rem;
+    font-weight:$normal-font-weight;
+}
+
+@mixin h3-subheader-dt{
+    @content;
+    font-size:1rem;
+    line-height:1.5rem;
+    font-weight:$bold-font-weight;
+}
+
+@mixin h4-para-comments-dt{
+    @content;
+    font-size:.875rem;
+    font-weight:$bold-font-weight;
+    line-height:1.375rem;
+}
+
+@mixin h4-paragraph{
+    @content;
+    font-size:.875rem;
+    font-weight:400;
+    line-height:1.25rem;
+}
+
+@mixin h5-labels{       // this has the same dimensions on mobile and dt
+    @content;
+    font-size:.75rem;
+    line-height:1.25rem;
+}
+
+//begin mixins for mobile text styles. -m means mobile
+
+@mixin h1-m{
+    @content;
+    font-size:1.5rem;
+    font-weight:$bold-font-weight;
+    line-height:2rem;
+}
+
+@mixin h2-m{
+    @content;
+    font-size:.875rem;
+    font-weight:$normal-font-weight;
+    line-height:1.375rem;
+}
+
+@mixin h2-m-para{
+    @content;
+    font-size:.875rem;
+    font-weight:$bold-font-weight;
+    line-height:1.375rem;
+}
+
+@mixin h2-m-semibold{
+    @content;
+    font-size:.875rem;
+    font-weight:600;
+    line-height:1.375rem;
+}
+
+@mixin h2-m-bold{
+    @content;
+    font-size:.875rem;
+    font-weight:$bold-font-weight;
+    line-height:1.375rem;
+}
+
+
+
+@mixin h4-para-m{
+    @content;
+    font-size:.8125rem;
+    line-height:1.125rem;
+}
+
+@mixin h4-para-m-semibold{
+    @content;
+    font-size:.8125rem;
+    font-weight:600;
+    line-height:1.125rem;
+
+}

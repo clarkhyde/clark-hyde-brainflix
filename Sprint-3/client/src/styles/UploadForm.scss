@@ -1,0 +1,85 @@
+@use 'variables' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+.upload-form{
+    padding: 2rem 1rem;
+    display:flex;
+    flex-direction: column;
+
+    @include tablet{
+        padding:2.5rem 1.5rem;
+        border-top: .125rem solid $mercury-color;
+        border-bottom: .125rem solid $mercury-color;
+    }
+
+    @include desktop{
+        flex-direction: row;
+        padding: 2.5rem 6.25rem;
+    }
+
+    @include desktop{
+        padding: 2.5rem 6.25rem;
+    }
+
+    &__thumb-title{
+        @include h2-m-semibold{
+            color: $silver-color;
+        }
+    }
+
+    &__thumb-image{
+        width: 18rem;
+        margin-bottom: 2rem;
+        
+        @include tablet{
+            width:21.5rem;
+            margin-bottom: 2.5rem;
+        }
+        @include desktop{
+            margin-right: 1.5rem;
+        }
+    }
+
+    &__title-label{
+        @include h2-m-semibold{
+            color: $silver-color;
+        }
+    }
+
+    &__title-input{
+        background-color: $alabaster-color;
+        color: $black-color;
+        padding:1rem;
+        width: 100%;
+        border: .125rem solid $mercury-color;
+        background-color: $alabaster-color;
+        border-radius: .5rem;
+
+        @include desktop{
+            width: 44.5rem;
+        }
+    }
+
+    &__description-label{
+        @include h2-m-semibold{
+            color: $silver-color;
+            padding-top:1.5rem;
+        }
+    }
+
+    &__description-input{
+        background-color: $alabaster-color;
+        color: $black-color;
+        padding:1rem 1rem 6.9375rem 1rem;
+        height: 8.9375rem;
+        width: 100%;
+        border: .125rem solid $mercury-color;
+        background-color: $alabaster-color;
+        border-radius: .5rem;
+
+        @include desktop{
+            width: 44.5rem;
+        }
+    }
+}   

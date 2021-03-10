@@ -1,0 +1,55 @@
+@use 'variables' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+.upload-form__buttons{
+
+    @include tablet{
+        padding: 2.5rem 1.5rem 0 0;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    @include desktop{
+        padding-right: 6.25rem;
+    }
+}
+
+.upload-form__publish{
+
+    @include h2-m-semibold{
+        background-color: $blue-color;
+        padding: 1rem 0;
+        border-radius:.5rem;
+        width: 18rem;
+        display:flex;
+        justify-content: center;
+        margin: 2rem 1rem .5rem 1rem;
+        color: white;
+
+        @include tablet{
+            margin: 0;
+            width: 10rem;
+        }
+    }
+}
+
+.upload-form__cancel{
+    
+    @include h2-m-semibold{
+        color: $blue-color;
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-radius:.5rem;
+        width: 100%;
+        display:flex;
+        justify-content: center;
+        margin: .5rem 0;
+
+        @include tablet{
+            margin: 0;
+            width: 10rem;
+        }
+    }
+}
+

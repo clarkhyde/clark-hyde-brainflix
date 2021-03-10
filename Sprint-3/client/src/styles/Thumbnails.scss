@@ -1,0 +1,38 @@
+@use 'variables' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+
+.mainbody{
+    @include desktop{
+        display:flex;
+    }
+
+    
+}
+
+.thumbnails{
+    padding: 2.5rem 1rem 0 1rem;
+    min-width:100vw;
+    max-width: 21.5rem;
+    @include tablet{
+        padding: 2.5rem 1.5rem 0 1.5rem;
+    }
+
+    @include desktop{
+        min-width:21.5rem;
+        width: 21.5rem;
+        border-left: .25rem solid $mercury-color;
+    }
+
+    &__header{
+        @include h2-m-semibold{
+            color: $silver-color;
+            padding-bottom: 2.5rem;
+        }
+
+        @include desktop{
+            width: 21.5rem;
+        }
+    }
+}

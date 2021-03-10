@@ -1,0 +1,15 @@
+@use 'variables' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+.mainbody{
+    @include desktop{
+        display:flex;
+    }
+}
+
+.body-left{
+    @include desktop{
+        margin-left:6.25rem;
+    }
+}

@@ -1,0 +1,139 @@
+@use 'variables' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+.video-display{
+    display:flex;
+    flex-wrap: wrap;
+    border-bottom: .125rem solid $mercury-color;
+    margin: 0 1rem;
+
+    @include tablet{
+        justify-content:space-between;
+        flex-wrap:nowrap;
+        margin: 0;
+    }
+
+    &__title{
+        @include h1-m{
+            padding: 2rem 1rem 1rem 1rem;
+            color: $black-color;
+            
+            @include tablet{
+                @include h1-header-dt{
+                    padding: 3rem 0 1.5rem 1.5rem;
+                }
+            }
+
+            @include desktop{
+                padding: 3rem 0 1.5rem 0;
+            }
+        }
+
+    }
+    
+    &__channel{
+        @include h2-m-bold{
+            padding: 0 .5rem 1rem 0;
+            color: $black-color;
+
+            @include tablet{
+                padding: 0 .5rem 1.5rem 1.5rem;
+            }
+            @include desktop{
+                @include h3-subheader-dt{
+                    padding-left: 0rem;
+
+                }
+            }
+        }
+    
+    }
+    
+    &__timestamp{
+        @include h2-m{
+            color: $silver-color;
+            padding-right:2.5rem;
+        }
+
+        @include tablet{
+            padding-right:20rem;
+        }
+
+        @include desktop{
+            @include h3-subheader-regular{
+                padding-right: 21.5625vw;
+            }
+        }
+    
+    }
+    
+    &__views{
+        @include h2-m{
+            color: $black-color;
+            padding: 0 1rem 1.5rem 0;
+            display:flex;
+            align-items:center;
+        }
+
+        @include desktop{
+            @include desktop{
+                @include h3-subheader-regular{
+                    padding: 0 1rem 1.5rem 0;
+                }
+            }
+        }
+    
+    }
+    
+    &__likes{
+        @include h2-m{
+            color: $black-color;
+            display:flex;
+            align-items: center;
+            padding: 0 1.5rem 1.5rem .5rem;
+        }
+
+        @include tablet{
+            padding-right:1.5rem;
+        }
+
+                @include desktop{
+            @include h3-subheader-regular{
+                padding-right: 2.5vw;
+            }
+        }
+    }
+    
+    &__icon{
+        padding-right: .5rem;
+    }
+    
+    &__description{
+        @include h4-para-m{
+            padding: 1.5rem 0 2.5rem 0;
+            margin:0 1rem;
+            color:$black-color;
+         //   border-top: .125rem solid $mercury-color;
+        }
+
+        @include tablet{
+            @include h4-paragraph{
+                padding: 2.5rem 13.25rem 4rem 1.5rem
+
+            }
+        }
+        @include desktop{
+            width: 40vw;
+            padding: 2.5rem 0 4rem 0;
+        }
+    }
+}
+
+.video-info{
+    @include desktop{
+        width: 63.4375vw;
+        padding-left:7.8125vw;
+        margin: 0;
+    }
+}

@@ -1,0 +1,41 @@
+@use 'variables' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+
+.modal{
+    padding: 1rem;
+    background-color: $mercury-color;
+    max-width: 22.5rem;
+
+    @include tablet{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 1.5rem;
+        margin: 0 1.5rem;
+        width: 22.5rem;
+    }
+
+    &__title{
+        @include h2-m-semibold{
+            color: $black-color;
+        }
+    }
+
+    &__home{
+        background-color: $blue-color;
+        padding: 1rem 0;
+        border-radius:.5rem;
+        width: 100%;
+        display:flex;
+        justify-content: center;
+        max-width: 19rem;
+        
+    }
+
+    &__home:hover{
+        background-color: $silver-color;
+        color: $blue-color;
+    }
+}
