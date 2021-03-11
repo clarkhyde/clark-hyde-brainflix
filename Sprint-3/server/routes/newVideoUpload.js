@@ -9,17 +9,12 @@ readVideoFile = () =>{
     return parsedData;
 }
 
-getSelectedVideo = (id) =>{
-    let parsedData = readVideoFile();
-    let newData = parsedData.filter(video => video.id === id);
-    console.log(newData);
-    return newData;
-}
 
-router.get("/videos/:videoId", (req, res) =>{
-    const id = req.params.videoId;
-    //console.log(id);
-    res.json(getSelectedVideo(id));
-});
+router.post("/upload", (req, res)=>{
+    const {id, title, channel, image, description, views, likes, duration, video,timestamp, comments} = req.body;
+    console.log(req.body);
+    //need to read file, then add what we got from this to that file.
+    
+})
 
 module.exports = router;

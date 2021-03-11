@@ -39,21 +39,28 @@ componentDidMount(){
 
 componentDidUpdate(prevProps){
   const { videoId } = this.props.match.params;
- 
-  if(prevProps.match.params.videoId !== videoId){
-    axios.get(`http://localhost:8080/videos/${videoId}`)
-    .then((response)=>{
-      this.setState({
-        mainVideo: response.data[0],
-        displayedComments: response.data[0].comments.sort((a,b)=>b.timestamp-a.timestamp)
+
+    if(prevProps.match.params.videoId !== videoId){
+      axios.get(`http://localhost:8080/videos/${videoId}`)
+      .then((response)=>{
+        console.log(response);
+        this.setState({
+          mainVideo: response.data[0],
+          displayedComments: response.data[0].comments.sort((a,b)=>b.timestamp-a.timestamp)
+        })
       })
-    })
-    }
+      } 
+
+
+  // !prevProps.match.params &&  axios.get(`http://localhost:8080/videos/${videoId}`)
+  // .then((response)=>{
+  //   console.log(videoId);
+  //   this.setState({
+  //     mainVideo: response.data[0],
+  //     displayedComments: response.data[0].comments.sort((a,b)=>b.timestamp-a.timestamp)
+  //   })
+  // });  
 }
-
-
-
-
 
 
   render() {

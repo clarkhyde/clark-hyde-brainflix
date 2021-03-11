@@ -3,6 +3,8 @@ import uploadImage from '../Assets/Images/Upload-video-preview.jpg';
 import '../styles/UploadForm.scss';
 import UploadPageButtons from './UploadPageButtons';
 import Modal from './Modal';
+import axios from 'axios';
+import {v4 as uuidv4} from 'uuid';
 
 class UploadForm extends Component {
 
@@ -26,8 +28,22 @@ class UploadForm extends Component {
 
      postVideo =(event) =>{
          event.preventDefault();
-         console.log(event.target.inputTitle);
-         console.log(event.target.inputDescription);
+         console.log(event.target.inputTitle.value);
+         console.log(event.target.inputDescription.value);
+        axios.post('http://localhost:8080/upload',{
+            id: uuidv4(),
+            title: event.target.inputTitle.value,
+            channel: "Best Channel",
+            description: event.target.inputDescription.value,
+            views: 9567457,
+            likes: 900001,
+            duration: "56:05",
+            video: "https://project-2-api.herokuapp.com/stream",
+            timestamp: 1545168149060,
+
+
+        })
+
 
          this.setState({
             show: true,
