@@ -11,9 +11,22 @@ readVideoFile = () =>{
 
 
 router.post("/upload", (req, res)=>{
-    const {id, title, channel, image, description, views, likes, duration, video,timestamp, comments} = req.body;
-    console.log(req.body);
-    //need to read file, then add what we got from this to that file.
+    const newUpload={
+        id: req.body.id,
+        title: req.body.title,
+        channel: req.body.channel,
+        description: req.body.description,
+        views: req.body.views,
+        likes: req.body.likes,
+        duration: req.body.duration,
+        video: req.body.video,
+        timestamp: req.body.timestamp
+    }
+    console.log(newUpload);
+    const uploads = readVideoFile();
+    uploads.push(newUpload);
+    fs.writeFileSync("./data/video-details.json", JSON.stringify(uploads));
+    res.json(uploads);
     
 })
 
