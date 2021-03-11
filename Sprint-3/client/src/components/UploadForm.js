@@ -12,7 +12,6 @@ class UploadForm extends Component {
         show: false,
     }
 
-
     updateTitle = (event) => {
         this.setState({
             title: event.target.value,
@@ -25,18 +24,19 @@ class UploadForm extends Component {
         })
     }
 
+     postVideo =(event) =>{
+         event.preventDefault();
+         console.log(event.target.inputTitle);
+         console.log(event.target.inputDescription);
 
-    handleClick = (event) => {
-        event.preventDefault();
-        this.setState({
+         this.setState({
             show: true,
         });
+        console.log(event);
         document.getElementById("form-upload").style.display="none";
         document.getElementById("upload-page__buttons").style.display="none";
-        console.log("You have been console logged because the button worked!");
+     }
 
-
-    }
     render() {
         return (
             <>
@@ -44,6 +44,7 @@ class UploadForm extends Component {
                 <form
                     className="upload-form"
                     id="form-upload"
+                    onSubmit={this.postVideo}
                 >
                     <div>
                         <h3 className="upload-form__thumb-title">VIDEO THUMBNAIL</h3>
@@ -78,11 +79,9 @@ class UploadForm extends Component {
                             onChange={this.updateDescription}
                             value={this.state.description}
                         />
-
                     </div>
                 </form>
-                <UploadPageButtons
-                    handleClick={this.handleClick} />
+                <UploadPageButtons/>
             </>
         );
     }

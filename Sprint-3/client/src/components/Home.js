@@ -29,7 +29,6 @@ componentDidMount(){
     
     axios.get(`http://localhost:8080/videos/${mainVideoId}`)
     .then((response)=>{
-      //console.log(response.data[0]);
        this.setState({
          mainVideo: response.data[0],
          displayedComments: response.data[0].comments.sort((a,b)=>b.timestamp-a.timestamp)
@@ -44,7 +43,6 @@ componentDidUpdate(prevProps){
   if(prevProps.match.params.videoId !== videoId){
     axios.get(`http://localhost:8080/videos/${videoId}`)
     .then((response)=>{
-    console.log(response.data[0]);
       this.setState({
         mainVideo: response.data[0],
         displayedComments: response.data[0].comments.sort((a,b)=>b.timestamp-a.timestamp)

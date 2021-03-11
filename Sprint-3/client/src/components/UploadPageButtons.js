@@ -1,13 +1,12 @@
 import {Link} from 'react-router-dom';
 import '../styles/UploadPageButtons.scss';
 
-function UploadPageButtons(props){
+function UploadPageButtons(){
 
     return(
         <div className="upload-form__buttons" id="upload-page__buttons">
             <button 
             className="upload-form__publish"
-            onClick={props.handleClick}
             form="form-upload"
             >
             PUBLISH
