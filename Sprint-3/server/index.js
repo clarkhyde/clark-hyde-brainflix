@@ -12,6 +12,7 @@ app.use(express.json());
 
 
 app.use("/", videoRoute);
+app.use("/", commentRoute);
 
 
 app.listen(PORT, () => {

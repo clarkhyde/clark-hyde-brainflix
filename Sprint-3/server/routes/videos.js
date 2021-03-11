@@ -11,7 +11,6 @@ readVideosFile = () =>{
 }
 
 
-
 router.get("/videos",(_req, res) =>{
     res.json(readVideosFile());
 });

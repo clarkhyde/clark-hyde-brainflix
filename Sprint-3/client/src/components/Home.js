@@ -18,28 +18,22 @@ class Home extends Component {
 
 componentDidMount(){
 
-  axios.get(`${APIUrl}videos/${APIKey}`)
+  axios.get(`http://localhost:8080/videos`)
   .then((response)=>{
-    
+
     this.setState({
       thumbs:response.data
     })
 
     const mainVideoId = response.data[0].id;
     
-    axios.get(`${APIUrl}videos/${mainVideoId}/${APIKey}`)
+    axios.get(`http://localhost:8080/videos/${mainVideoId}`)
     .then((response)=>{
-
+      //console.log(response.data[0]);
        this.setState({
-         mainVideo: response.data,
+         mainVideo: response.data[0],
+         displayedComments: response.data[0].comments.sort((a,b)=>b.timestamp-a.timestamp)
        })
-    })
-
-    axios.get(`${APIUrl}videos/${mainVideoId}/${APIKey}`)
-    .then((response)=>{
-      this.setState({
-        displayedComments: response.data.comments.sort((a,b)=>b.timestamp-a.timestamp)
-      })
     })
   })
 }
@@ -48,21 +42,14 @@ componentDidUpdate(prevProps){
   const { videoId } = this.props.match.params;
  
   if(prevProps.match.params.videoId !== videoId){
-    axios.get(`${APIUrl}videos/${videoId}/${APIKey}`)
+    axios.get(`http://localhost:8080/videos/${videoId}`)
     .then((response)=>{
-    console.log(response.data);
+    console.log(response.data[0]);
       this.setState({
-        mainVideo: response.data,
+        mainVideo: response.data[0],
+        displayedComments: response.data[0].comments.sort((a,b)=>b.timestamp-a.timestamp)
       })
     })
-
-      axios.get(`${APIUrl}videos/${videoId}/${APIKey}`)
-      .then((response)=>{
-
-        this.setState({
-          displayedComments: response.data.comments.sort((a,b)=>b.timestamp-a.timestamp),
-        })
-      })
     }
 }
 
