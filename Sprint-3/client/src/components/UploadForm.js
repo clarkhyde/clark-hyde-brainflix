@@ -31,7 +31,6 @@ class UploadForm extends Component {
          console.log(event.target.inputTitle.value);
          console.log(event.target.inputDescription.value);
         axios.post('http://localhost:8080/upload',{
-            id: uuidv4(),
             title: event.target.inputTitle.value,
             channel: "Best Channel",
             description: event.target.inputDescription.value,
@@ -40,7 +39,26 @@ class UploadForm extends Component {
             duration: "56:05",
             video: "https://project-2-api.herokuapp.com/stream",
             timestamp: 1545168149060,
-
+            comments: [
+                {
+                    name: "Napoleon Dynamite",
+                    comment: "Girls only want guys with good skills.",
+                    likes: 15000,
+                    timestamp: 1742262984046
+                },
+                {
+                    name: "Uncle Rico",
+                    comment: "How much do you want to make a bet I can throw a football over them mountains?",
+                    likes: 25,
+                    timestamp: 1522263984046
+                },
+                {
+                    name: "Pedro",
+                    comment: "If you vote for me, all of your wildest dreams will come true.",
+                    likes: 999,
+                    timestamp: 1568262224046
+                }
+            ]
 
         })
 

@@ -12,7 +12,7 @@ readVideoFile = () =>{
 
 router.post("/upload", (req, res)=>{
     const newUpload={
-        id: req.body.id,
+        id: uuidv4(),
         title: req.body.title,
         channel: req.body.channel,
         description: req.body.description,
@@ -20,12 +20,13 @@ router.post("/upload", (req, res)=>{
         likes: req.body.likes,
         duration: req.body.duration,
         video: req.body.video,
-        timestamp: req.body.timestamp
+        timestamp: req.body.timestamp,
+        comments: req.body.comments
     }
     console.log(newUpload);
     const uploads = readVideoFile();
     uploads.push(newUpload);
-    fs.writeFileSync("./data/video-details.json", JSON.stringify(uploads));
+    fs.writeFileSync("./data/video-details.json", JSON.stringify(uploads, null, 2));
     res.json(uploads);
     
 })

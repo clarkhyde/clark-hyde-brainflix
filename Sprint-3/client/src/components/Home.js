@@ -16,8 +16,7 @@ class Home extends Component {
     displayedComments: []
   };
 
-componentDidMount(){
-
+informationGetter = () =>{
   axios.get(`http://localhost:8080/videos`)
   .then((response)=>{
 
@@ -37,22 +36,33 @@ componentDidMount(){
   })
 }
 
+componentDidMount(){
+
+  this.informationGetter();
+
+}
+
 componentDidUpdate(prevProps){
   const { videoId } = this.props.match.params;
 
-    if(prevProps.match.params.videoId !== videoId){
+
+if(!videoId){
+  this.informationGetter();
+} else  if(prevProps.match.params.videoId !== videoId){
+      // console.log(prevProps.match.params.videoId);
+      // console.log(videoId);
       axios.get(`http://localhost:8080/videos/${videoId}`)
       .then((response)=>{
-        console.log(response);
+        console.log(response.data[0]);
         this.setState({
           mainVideo: response.data[0],
           displayedComments: response.data[0].comments.sort((a,b)=>b.timestamp-a.timestamp)
         })
       })
-      } 
+    } 
 
 
-  // !prevProps.match.params &&  axios.get(`http://localhost:8080/videos/${videoId}`)
+  // prevProps.match.params &&  axios.get(`http://localhost:8080/videos/${videoId}`)
   // .then((response)=>{
   //   console.log(videoId);
   //   this.setState({
@@ -66,6 +76,7 @@ componentDidUpdate(prevProps){
   render() {
     let remainingThumbnails = this.state.thumbs.filter((thumb) => {
       return thumb.id !== this.state.mainVideo.id;
+
 
     })
 
