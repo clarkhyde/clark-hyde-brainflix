@@ -5,6 +5,7 @@ import UploadPageButtons from './UploadPageButtons';
 import Modal from './Modal';
 import axios from 'axios';
 import {v4 as uuidv4} from 'uuid';
+import { APIUrl } from './Util';
 
 class UploadForm extends Component {
 
@@ -30,7 +31,7 @@ class UploadForm extends Component {
          event.preventDefault();
          console.log(event.target.inputTitle.value);
          console.log(event.target.inputDescription.value);
-        axios.post('http://localhost:8080/upload',{
+        axios.post(`${APIUrl}/upload`,{
             title: event.target.inputTitle.value,
             channel: "Best Channel",
             description: event.target.inputDescription.value,

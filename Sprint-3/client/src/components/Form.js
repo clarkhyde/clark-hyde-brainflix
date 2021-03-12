@@ -1,7 +1,7 @@
 import '../styles/Form.scss';
 import mohan from '../Assets/Images/Mohan-muruge.jpg'
 import axios from 'axios';
-import { APIKey, APIUrl } from './Util';
+import {  APIUrl } from './Util';
 
 function Form(mainVideo){
     const commentSubmit = (event)=>{
@@ -9,7 +9,7 @@ function Form(mainVideo){
         const form = event.target;
         const commentData = form.comment.value;
         const commentID = mainVideo.mainVideo.id;
-        axios.post(`http://localhost:8080/videos/${commentID}/comments`,{
+        axios.post(`${APIUrl}/videos/${commentID}/comments`,{
             name: "test user",
             comment:commentData
         })
