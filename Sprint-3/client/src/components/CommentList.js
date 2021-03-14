@@ -2,15 +2,12 @@ import Comment from './Comment';
 import {v4 as uuidv4} from 'uuid';
 
 
-function CommentList({displayedComments, mainVideo, deleteComment}) {
-    // console.log(mainVideo.id);
-    // console.log(displayedComments);
-    // console.log(deleteComment);
-
-
+function CommentList({mainVideo, deleteComment}) {
+    console.log(mainVideo.comments);
     return (
+        mainVideo.comments ? (
         <div>
-                {displayedComments.map((displayedComment)=>{
+                {mainVideo.comments.sort((a,b)=>b.timestamp-a.timestamp).map((displayedComment)=>{
                 return(
                     <Comment
                     key={uuidv4()}
@@ -23,7 +20,7 @@ function CommentList({displayedComments, mainVideo, deleteComment}) {
                     />
                 );
             })}    
-        </div>
+        </div>) : <div>Loading</div>
     );
 };
 

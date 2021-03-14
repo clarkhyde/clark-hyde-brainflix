@@ -13,7 +13,6 @@ class Home extends Component {
   state = {
     thumbs: [],
     mainVideo: [],
-    displayedComments: []
   };
 
 componentDidMount(){
@@ -32,22 +31,20 @@ componentDidUpdate(prevProps){
         .then((response)=>{
           this.setState({
             mainVideo: response.data[0],
-            displayedComments: response.data[0].comments.sort((a,b)=>b.timestamp-a.timestamp)
           })
         })
       } 
     }
 }
 
-
-
  deleteComment = (commentId,videoId) => {
    axios.delete(`${APIUrl}/videos/${videoId}/comments/${commentId}`)
    .then(response =>{
      console.log(response);
-      // this.setState({
-      //   displayedComments:response.data
-      // })
+
+       this.setState({
+         mainVideo:response.data
+       })
    })
  }
 
@@ -63,7 +60,7 @@ informationGetter = () =>{
     .then((response)=>{
        this.setState({
          mainVideo: response.data[0],
-         displayedComments: response.data[0].comments.sort((a,b)=>b.timestamp-a.timestamp)
+        // displayedComments: response.data[0].comments.sort((a,b)=>b.timestamp-a.timestamp)
        })
     })
   })
@@ -71,6 +68,11 @@ informationGetter = () =>{
 
 
   render() {
+    if (this.state.mainVideo === null) {
+       return <main>Loading...</main>;
+    }
+    const mainVideo = this.state.mainVideo;
+
     let remainingThumbnails = this.state.thumbs.filter((thumb) => {
       return thumb.id !== this.state.mainVideo.id;
     })
@@ -89,7 +91,6 @@ informationGetter = () =>{
             mainVideo={this.state.mainVideo}
             />
              <CommentList
-                displayedComments={this.state.displayedComments}
                 mainVideo={this.state.mainVideo} 
                 deleteComment={this.deleteComment}
                 /> 
