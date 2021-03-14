@@ -16,35 +16,20 @@ class Home extends Component {
     displayedComments: []
   };
 
-informationGetter = () =>{
-  axios.get(`${APIUrl}/videos`)
-  .then((response)=>{
-    this.setState({
-      thumbs:response.data
-    })
-    const mainVideoId = response.data[0].id;
-    
-    axios.get(`${APIUrl}/videos/${mainVideoId}`)
-    .then((response)=>{
-       this.setState({
-         mainVideo: response.data[0],
-         displayedComments: response.data[0].comments.sort((a,b)=>b.timestamp-a.timestamp)
-       })
-    })
-  })
-}
-
 componentDidMount(){
-  this.informationGetter();
+  const { videoId } = this.props.match.params;
+  console.log(videoId);
+   this.informationGetter();
 }
 
 componentDidUpdate(prevProps){
   const { videoId } = this.props.match.params;
 
-  if(!videoId){
-    this.informationGetter();
-  } else  if(prevProps.match.params.videoId !== videoId){
-        axios.get(`${APIUrl}/videos/${videoId}`)
+  if(prevProps.match.params.videoId !== videoId){
+    if(!videoId){
+      this.informationGetter();
+    }  else{ 
+        axios.get(`http://localhost:8080/videos/${videoId}`)
         .then((response)=>{
           this.setState({
             mainVideo: response.data[0],
@@ -52,6 +37,37 @@ componentDidUpdate(prevProps){
           })
         })
       } 
+    }
+}
+
+
+
+ deleteComment = (commentId,videoId) => {
+   axios.delete(`http://localhost:8080/videos/${videoId}/comments/${commentId}`)
+   .then(response =>{
+     console.log(response.data);
+      // this.setState({
+      //   displayedComments:response.data
+      // })
+   })
+ }
+
+
+informationGetter = () =>{
+  axios.get(`http://localhost:8080/videos`)
+  .then((response)=>{
+    this.setState({
+      thumbs:response.data
+    })
+    const mainVideoId = response.data[0].id;
+    axios.get(`http://localhost:8080/videos/${mainVideoId}`)
+    .then((response)=>{
+       this.setState({
+         mainVideo: response.data[0],
+         displayedComments: response.data[0].comments.sort((a,b)=>b.timestamp-a.timestamp)
+       })
+    })
+  })
 }
 
 
@@ -74,7 +90,9 @@ componentDidUpdate(prevProps){
             mainVideo={this.state.mainVideo}
             />
              <CommentList
-                displayedComments={this.state.displayedComments} 
+                displayedComments={this.state.displayedComments}
+                mainVideo={this.state.mainVideo} 
+                deleteComment={this.deleteComment}
                 /> 
             </div>
             <Thumbnails

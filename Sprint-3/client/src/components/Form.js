@@ -9,13 +9,13 @@ function Form(mainVideo){
         const form = event.target;
         const commentData = form.comment.value;
         const commentID = mainVideo.mainVideo.id;
-        axios.post(`${APIUrl}/videos/${commentID}/comments`,{
-            name: "test user",
-            comment:commentData
-        })
-         .then((response)=>{
-           console.log(response);
-         })
+        // axios.post(`${APIUrl}/videos/${commentID}/comments`,{
+        //     name: "test user",
+        //     comment:commentData
+        // })
+        //  .then((response)=>{
+        //    console.log(response);
+        //  })
       }
 
         return(

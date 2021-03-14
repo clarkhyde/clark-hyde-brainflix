@@ -31,7 +31,7 @@ class UploadForm extends Component {
          event.preventDefault();
          console.log(event.target.inputTitle.value);
          console.log(event.target.inputDescription.value);
-        axios.post(`${APIUrl}/upload`,{
+        axios.post(`http://localhost:8080/upload`,{
             title: event.target.inputTitle.value,
             channel: "Best Channel",
             description: event.target.inputDescription.value,
@@ -43,19 +43,22 @@ class UploadForm extends Component {
             comments: [
                 {
                     name: "Napoleon Dynamite",
-                    comment: "Girls only want guys with good skills.",
+                    comment: "Girls only want guys with good skills. Hey Deb, I caught you this delicious bass. Six bucks? That's like a dollar an hour!",
+                    id: uuidv4(),
                     likes: 15000,
                     timestamp: 1742262984046
                 },
                 {
                     name: "Uncle Rico",
-                    comment: "How much do you want to make a bet I can throw a football over them mountains?",
+                    comment: "How much do you want to make a bet I can throw a football over them mountains? Back in 82, I could throw a pig skin a quarter mile.",
+                    id: uuidv4(),
                     likes: 25,
                     timestamp: 1522263984046
                 },
                 {
-                    name: "Pedro",
-                    comment: "If you vote for me, all of your wildest dreams will come true.",
+                    name: "Rex Quando",
+                    comment: "Take a look at what I'm wearing. Do you think anyone wants a round house kick to the face while I'm wearing these bad boys? Forget about it! Do you think I got to where I am by dressing like peter pan over here?",
+                    id: uuidv4(),
                     likes: 999,
                     timestamp: 1568262224046
                 }

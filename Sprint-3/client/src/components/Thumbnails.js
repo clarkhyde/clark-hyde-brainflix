@@ -1,5 +1,6 @@
 import '../styles/Thumbnails.scss';
 import ThumbnailContent from './ThumbnailContent';
+import {v4 as uuidv4} from 'uuid';
 
 
 
@@ -10,6 +11,7 @@ function Thumbnails({thumbs}){
             {thumbs.map((thumb)=>{
                 return(
                     <ThumbnailContent 
+                        key={uuidv4()}
                         id={thumb.id}
                         title={thumb.title}
                         channel={thumb.channel}

@@ -12,7 +12,7 @@ readVideoFile = () =>{
 getSelectedVideo = (id) =>{
     let parsedData = readVideoFile();
     let newData = parsedData.filter(video => video.id === id);
-    console.log(newData);
+   // console.log(newData);
     return newData;
 }
 
@@ -21,5 +21,6 @@ router.get("/videos/:videoId", (req, res) =>{
     //console.log(id);
     res.json(getSelectedVideo(id));
 });
+
 
 module.exports = router;
