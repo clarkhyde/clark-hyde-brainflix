@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 function Nav()  {  
         return (
             <nav className ="nav">
-                <NavLink exact to="/"><img src={logo} className = "nav__image" alt="Brainflix"/></ NavLink>
+                <NavLink exact to="/"><div><img src={logo} className = "nav__image" alt="Brainflix"/></div></ NavLink>
                 <ul className = "nav-right">
                     <li className = "nav-right__search">
                         <input type="text" className ="nav-right__input" placeholder= "Search"></input>
