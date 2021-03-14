@@ -31,7 +31,7 @@ class UploadForm extends Component {
          event.preventDefault();
          console.log(event.target.inputTitle.value);
          console.log(event.target.inputDescription.value);
-        axios.post(`http://localhost:8080/upload`,{
+        axios.post(`${APIUrl}/upload`,{
             title: event.target.inputTitle.value,
             channel: "Best Channel",
             description: event.target.inputDescription.value,
@@ -86,7 +86,7 @@ class UploadForm extends Component {
                 >
                     <div>
                         <h3 className="upload-form__thumb-title">VIDEO THUMBNAIL</h3>
-                        <img className="upload-form__thumb-image" src={uploadImage} alt="upload image" />
+                        <img className="upload-form__thumb-image" src={uploadImage} alt="Upload" />
                     </div>
                     <div>
                         <label

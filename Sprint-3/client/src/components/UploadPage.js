@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
 import UploadForm from './UploadForm';
 import '../styles/UploadPage.scss';
 

@@ -8,7 +8,6 @@ const uploadRoute = require("./routes/newVideoUpload");
 const deleteCommentRoute = require("./routes/deleteCommentRoute");
 
 app.use(cors());
-
 app.use(express.json());
 
 

@@ -28,7 +28,7 @@ function Form(mainVideo){
                 onSubmit={commentSubmit}
                 className ="comment-form">
                 <img src ={mohan} 
-                    className="comment-form__image" alt="Profile Image"/>
+                    className="comment-form__image" alt="Profile"/>
                 <input 
                     type ="text" 
                     className="comment-form__text-input" 

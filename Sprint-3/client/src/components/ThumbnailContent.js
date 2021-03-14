@@ -9,7 +9,7 @@ function ThumbnailContent({id, title, channel, image}) {
     return(
         <Link to={"/video-details/"+ id} id={id}>
             <div className="thumbnails__card" id={id}>
-            <div><img className="thumbnails__image" src={image} id={id} alt="thumbnail image"/></div>
+            <div><img className="thumbnails__image" src={image} id={id} alt="video thumbnail"/></div>
             <ul className="thumbnails__list">
                 <li key ={uuidv4()}className="thumbnails__title">{title}</li>
                 <li className="thumbnails__channel" >{channel}</li>

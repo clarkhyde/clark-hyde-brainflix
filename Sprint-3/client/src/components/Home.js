@@ -17,8 +17,7 @@ class Home extends Component {
   };
 
 componentDidMount(){
-  const { videoId } = this.props.match.params;
-  console.log(videoId);
+  //const { videoId } = this.props.match.params;
    this.informationGetter();
 }
 
@@ -29,7 +28,7 @@ componentDidUpdate(prevProps){
     if(!videoId){
       this.informationGetter();
     }  else{ 
-        axios.get(`http://localhost:8080/videos/${videoId}`)
+        axios.get(`${APIUrl}/videos/${videoId}`)
         .then((response)=>{
           this.setState({
             mainVideo: response.data[0],
@@ -43,9 +42,9 @@ componentDidUpdate(prevProps){
 
 
  deleteComment = (commentId,videoId) => {
-   axios.delete(`http://localhost:8080/videos/${videoId}/comments/${commentId}`)
+   axios.delete(`${APIUrl}/videos/${videoId}/comments/${commentId}`)
    .then(response =>{
-     console.log(response.data);
+     console.log(response);
       // this.setState({
       //   displayedComments:response.data
       // })
@@ -54,13 +53,13 @@ componentDidUpdate(prevProps){
 
 
 informationGetter = () =>{
-  axios.get(`http://localhost:8080/videos`)
+  axios.get(`${APIUrl}/videos`)
   .then((response)=>{
     this.setState({
       thumbs:response.data
     })
     const mainVideoId = response.data[0].id;
-    axios.get(`http://localhost:8080/videos/${mainVideoId}`)
+    axios.get(`${APIUrl}/videos/${mainVideoId}`)
     .then((response)=>{
        this.setState({
          mainVideo: response.data[0],

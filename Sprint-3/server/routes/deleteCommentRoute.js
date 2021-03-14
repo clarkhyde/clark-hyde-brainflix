@@ -30,7 +30,7 @@ router.delete("/videos/:videoId/comments/:commentId",(req, res)=>{
     const videoId = req.params.videoId;
     const commentId = req.params.commentId;
     let vidEdit = deleteSelectectedComment(videoId,commentId);
-    let newData = editVideoFile(vidEdit,videoId);
+    editVideoFile(vidEdit,videoId);
     const newArr = readVideoFile();
     let updatedVid = newArr.filter(video => video.id === videoId);
     console.log(updatedVid);

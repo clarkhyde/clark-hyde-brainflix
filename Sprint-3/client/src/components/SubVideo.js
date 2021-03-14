@@ -12,8 +12,8 @@ let formattedDate= new Date(mainVideo.timestamp).toLocaleDateString("en-US");
             <ul className="video-display" >
                 <li className="video-display__channel">{mainVideo.channel}</li>
                 <li className="video-display__timestamp">{formattedDate}</li>
-                <li className="video-display__views"><img className="video-display__icon" src={viewsIcon}/>{mainVideo.views}</li>
-                <li className="video-display__likes"><img className="video-display__icon" src={likesIcon}/>{mainVideo.likes}</li>
+                <li className="video-display__views"><img className="video-display__icon" src={viewsIcon} alt="Views"/>{mainVideo.views}</li>
+                <li className="video-display__likes"><img className="video-display__icon" src={likesIcon} alt ="Likes"/>{mainVideo.likes}</li>
             </ul>
             <p className="video-display__description">{mainVideo.description}</p>
         </div>

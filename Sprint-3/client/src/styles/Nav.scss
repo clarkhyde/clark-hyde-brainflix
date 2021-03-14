@@ -71,17 +71,19 @@
     }
 
     &__button{
-        background-color: $blue-color;
-        padding: 1rem 0;
-        border-radius:.5rem;
-        width: 13.625rem;
-        display:flex;
-        justify-content: center;
-        margin: .5rem 0;
+        @include h2-m-semibold{
+            background-color: $blue-color;
+            padding: 1rem 0;
+            border-radius:.5rem;
+            width: 13.625rem;
+            display:flex;
+            justify-content: center;
+            margin: .5rem 0;
+        }
 
         @include tablet{
             width: 6.5rem;
-        }
+            }
     }
 
     &__image{
