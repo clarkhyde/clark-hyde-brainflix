@@ -10,7 +10,7 @@ function Comment({name,comment,timestamp,videoId, commentId, deleteComment}) {
             <span className="comments__name">{name}</span>
             <span className="comments__date">{formattedTime}</span>
             <p className="comments__comment">{comment}</p>
-            <span onClick={() =>deleteComment(commentId, videoId)}>DELETE COMMENT</span>
+            <span onClick={() =>deleteComment(commentId, videoId)}>X</span>
         </li>
 
     </ul>

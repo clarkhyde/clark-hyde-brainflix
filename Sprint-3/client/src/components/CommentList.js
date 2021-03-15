@@ -3,7 +3,6 @@ import {v4 as uuidv4} from 'uuid';
 
 
 function CommentList({mainVideo, deleteComment}) {
-    console.log(mainVideo.comments);
     return (
         mainVideo.comments ? (
         <div>

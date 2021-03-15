@@ -29,8 +29,6 @@ class UploadForm extends Component {
 
      postVideo =(event) =>{
          event.preventDefault();
-         console.log(event.target.inputTitle.value);
-         console.log(event.target.inputDescription.value);
         axios.post(`${APIUrl}/upload`,{
             title: event.target.inputTitle.value,
             channel: "Best Channel",
@@ -70,7 +68,6 @@ class UploadForm extends Component {
          this.setState({
             show: true,
         });
-        console.log(event);
         document.getElementById("form-upload").style.display="none";
         document.getElementById("upload-page__buttons").style.display="none";
      }

@@ -19,13 +19,11 @@ function VideoInfo({vids}) {
                         duration={vid.duration}
                         timestamp={vid.timestamp}
                         />
-
-                );
-            })}
-        </div>
+                    );
+                })}
+            </div>
         </main>
         );
 }
-
 
 export default VideoInfo;
