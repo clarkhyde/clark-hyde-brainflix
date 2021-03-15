@@ -3,7 +3,7 @@ import likesIcon from '../Assets/Icons/Icon-likes.svg';
 import '../styles/SubVideo.scss';
 
 
-function SubVideo({mainVideo}){
+function SubVideo({mainVideo, likeIncrementer}){
 let formattedDate= new Date(mainVideo.timestamp).toLocaleDateString("en-US");
     return(
         <>
@@ -13,7 +13,7 @@ let formattedDate= new Date(mainVideo.timestamp).toLocaleDateString("en-US");
                 <li className="video-display__channel">{mainVideo.channel}</li>
                 <li className="video-display__timestamp">{formattedDate}</li>
                 <li className="video-display__views"><img className="video-display__icon" src={viewsIcon} alt="Views"/>{mainVideo.views}</li>
-                <li className="video-display__likes"><img className="video-display__icon" src={likesIcon} alt ="Likes"/>{mainVideo.likes}</li>
+                <li onClick={()=>{likeIncrementer(mainVideo.id)}} className="video-display__likes"><img className="video-display__icon" src={likesIcon} alt ="Likes"/>{mainVideo.likes}</li>
             </ul>
             <p className="video-display__description">{mainVideo.description}</p>
         </div>

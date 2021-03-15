@@ -37,6 +37,33 @@ componentDidUpdate(prevProps){
     }
 }
 
+likeIncrementer = (mainVideoId) =>{
+  console.log(mainVideoId);
+  axios.post(`${APIUrl}/videos/${mainVideoId}/likes`,{
+    id:mainVideoId,
+  })
+  .then(response=>{
+    this.setState({
+      mainVideo: response.data[0]
+    })
+    console.log(response);
+  })
+}
+
+// commentSubmit = (event)=>{
+//   event.preventDefault();
+//   const form = event.target;
+//   const commentData = form.comment.value;
+//   const commentID = mainVideo.mainVideo.id;
+//   // axios.post(`${APIUrl}/videos/${commentID}/comments`,{
+//   //     name: "test user",
+//   //     comment:commentData
+//   // })
+//   //  .then((response)=>{
+//   //    console.log(response);
+//   //  })
+// }
+
  deleteComment = (commentId,videoId) => {
    axios.delete(`${APIUrl}/videos/${videoId}/comments/${commentId}`)
    .then(response =>{
@@ -60,7 +87,6 @@ informationGetter = () =>{
     .then((response)=>{
        this.setState({
          mainVideo: response.data[0],
-        // displayedComments: response.data[0].comments.sort((a,b)=>b.timestamp-a.timestamp)
        })
     })
   })
@@ -86,9 +112,11 @@ informationGetter = () =>{
             <div className="body-left">
             <SubVideo
                 mainVideo={this.state.mainVideo} 
+                likeIncrementer ={this.likeIncrementer}
                 />
             <Form
             mainVideo={this.state.mainVideo}
+            commentSubmit={this.commentSubmit}
             />
              <CommentList
                 mainVideo={this.state.mainVideo} 

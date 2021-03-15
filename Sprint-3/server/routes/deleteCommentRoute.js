@@ -3,9 +3,6 @@ const router = express.Router();
 const fs = require("fs");
 
 
-
-module.exports = router;
-
 readVideoFile = () =>{
     const fullData = fs.readFileSync("./data/video-details.json");
     const parsedData = JSON.parse(fullData);
@@ -36,3 +33,5 @@ router.delete("/videos/:videoId/comments/:commentId",(req, res)=>{
     console.log(updatedVid);
     res.json(updatedVid[0]);
 })
+
+module.exports = router;

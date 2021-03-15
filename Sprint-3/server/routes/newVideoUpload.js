@@ -26,7 +26,6 @@ router.post("/upload", (req, res)=>{
         timestamp: req.body.timestamp,
         comments: req.body.comments
     }
-    console.log(newUpload);
     const uploads = readVideoFile();
     uploads.push(newUpload);
     fs.writeFileSync("./data/video-details.json", JSON.stringify(uploads, null, 2));
